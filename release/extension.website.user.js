@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708357347
+// @version      1708359169
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -27,7 +27,7 @@
 (async function () {
     let isDevelopment = false;
 
-    let version = '1708357347'
+    let version = '1708359169'
     let type = 'website'
     function getBrowser() {
         switch (type) {
@@ -331,7 +331,7 @@
 
         if (isTrustPageCache == undefined) {
             const domains = [
-                '2gether.video', 'videotogether.github.io'
+                '2gether.video', 'videotogether.github.io', 'syncplay.tama.guru', 'tama.host'
             ];
 
             const hostname = window.location.hostname;
@@ -353,6 +353,8 @@
                     let url = new URL(e.data.data.url);
                     if (!url.hostname.endsWith("2gether.video")
                         && !url.hostname.endsWith("chizhou.in")
+                        && !url.hostname.endsWith("syncplay.tama.guru")
+                        && !url.hostname.endsWith("api.tama.host")
                         && !url.hostname.endsWith("panghair.com")
                         && !url.hostname.endsWith("rpc.kraken.fm")
                         && !url.hostname.endsWith("aliyuncs.com")) {
@@ -394,6 +396,8 @@
                 case 15: {
                     if (window.location.hostname.endsWith("videotogether.github.io")
                         || window.location.hostname.endsWith("2gether.video")
+                        || window.location.hostname.endsWith("syncplay.tama.guru")
+                        || window.location.hostname.endsWith("api.tama.host")
                         || e.data.data.key.startsWith("Public")
                         || isWebsite) {
                         getGM().setValue(e.data.data.key, e.data.data.value)
