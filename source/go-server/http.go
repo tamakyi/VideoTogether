@@ -45,7 +45,7 @@ type slashFix struct {
 	vtSrv  *VideoTogetherService
 	qps    *qps.QP
 
-	krakenUrl "https://chat.tama.guru"
+	krakenUrl string // https://github.com/MixinNetwork/kraken
 	rpClient  *http.Client
 }
 

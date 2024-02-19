@@ -357,6 +357,7 @@
                         && !url.hostname.endsWith("api.tama.host")
                         && !url.hostname.endsWith("panghair.com")
                         && !url.hostname.endsWith("rpc.kraken.fm")
+                        && !url.hostname.endsWith("chat.tama.guru")
                         && !url.hostname.endsWith("aliyuncs.com")) {
                         console.error("permission error", e.data);
                         return;

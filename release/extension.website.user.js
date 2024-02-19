@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708359169
+// @version      1708360766
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -27,7 +27,7 @@
 (async function () {
     let isDevelopment = false;
 
-    let version = '1708359169'
+    let version = '1708360766'
     let type = 'website'
     function getBrowser() {
         switch (type) {
@@ -357,6 +357,7 @@
                         && !url.hostname.endsWith("api.tama.host")
                         && !url.hostname.endsWith("panghair.com")
                         && !url.hostname.endsWith("rpc.kraken.fm")
+                        && !url.hostname.endsWith("chat.tama.guru")
                         && !url.hostname.endsWith("aliyuncs.com")) {
                         console.error("permission error", e.data);
                         return;
