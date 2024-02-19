@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/VideoTogether/tamakyi/internal/qps"
 	"github.com/gorilla/websocket"
+	"github.com/tamakyi/VideoTogether/internal/qps"
 )
 
 var joinPanic = 0
