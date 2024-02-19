@@ -64,12 +64,14 @@ func newSlashFix(
 		rpClient:  rpClient,
 	}
 
+	var krakenUrl string "chat.tama.guru"
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/room/get", s.handleRoomGet)
 	mux.HandleFunc("/timestamp", s.handleTimestamp)
 	mux.HandleFunc("/room/update", s.handleRoomUpdate)
 	mux.HandleFunc("/statistics", s.handleStatistics)
-	mux.HandleFunc("/kraken", s.handleKraken)
+	mux.HandleFunc("/kraken", krakenUrl)
 	mux.HandleFunc("/qps", s.qpsHtml)
 	mux.HandleFunc("/qps_json", s.qpsJson)
 	mux.HandleFunc("/static/check_easy_share", s.handleStaticCheckEasyShare)
