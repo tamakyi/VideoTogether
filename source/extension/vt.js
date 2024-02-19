@@ -1675,9 +1675,9 @@
 
         HelpButtonOnClick() {
             this.Maximize();
-            let url = 'https://api.tama.host/videotogether/guide/qa.html';
+            let url = 'https://box.tama.guru/_/tamakyi';
             if (vtRuntime == "website") {
-                url = "https://api.tama.host/videotogether/guide/website_qa.html"
+                url = "https://box.tama.guru/_/tamakyi"
             }
             window.open(url, '_blank');
         }

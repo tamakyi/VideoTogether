@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708354233
+// @version      1708357347
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -2967,9 +2967,9 @@
 
         HelpButtonOnClick() {
             this.Maximize();
-            let url = 'https://api.tama.host/videotogether/guide/qa.html';
+            let url = 'https://box.tama.guru/_/tamakyi';
             if (vtRuntime == "website") {
-                url = "https://api.tama.host/videotogether/guide/website_qa.html"
+                url = "https://box.tama.guru/_/tamakyi"
             }
             window.open(url, '_blank');
         }
@@ -3115,7 +3115,7 @@
 
             this.activatedVideo = undefined;
             this.tempUser = generateTempUserId();
-            this.version = '1708354233';
+            this.version = '1708357347';
             this.isMain = (window.self == window.top);
             this.UserId = undefined;
 
