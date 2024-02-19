@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708352814
+// @version      1708354233
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -27,7 +27,7 @@
 (async function () {
     let isDevelopment = false;
 
-    let version = '1708352814'
+    let version = '1708354233'
     let type = 'website_debug'
     function getBrowser() {
         switch (type) {
@@ -570,7 +570,7 @@
     wrapper.innerHTML = `<div id="videoTogetherLoading">
     <div id="videoTogetherLoadingwrap">
         <img style="display: inline;" src="data:image/png;base64,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">
-        <a target="_blank" href="http://2gether.video/guide/qa.html">loading ...</a>
+        <a target="_blank" href="https://api.i-tama.website/videotogether/guide/qa.html">loading ...</a>
     </div>
 </div>
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708352814
+// @version      1708354233
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -3096,8 +3096,8 @@
             this.cspBlockedHost = {};
 
             this.video_together_host = 'http://127.0.0.1:5001/';
-            this.video_together_main_host = 'https://syncplay.tama.guru:5000/';
-            this.video_together_backup_host = 'https://syncplay.tama.guru:5000/';
+            this.video_together_main_host = 'https://syncplay.tama.guru/';
+            this.video_together_backup_host = 'https://syncplay.tama.guru/';
             this.video_tag_names = ["video", "bwp-video", "fake-iframe-video"]
 
             this.timer = 0
@@ -3115,7 +3115,7 @@
 
             this.activatedVideo = undefined;
             this.tempUser = generateTempUserId();
-            this.version = '1708352814';
+            this.version = '1708354233';
             this.isMain = (window.self == window.top);
             this.UserId = undefined;
 
