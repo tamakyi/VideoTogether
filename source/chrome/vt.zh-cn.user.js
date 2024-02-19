@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Video Together 一起看视频
-// @namespace    https://2gether.video/
-// @version      1695962125
-// @description  Watch video together 一起看视频
-// @author       maggch@outlook.com
+// @name         一起看视频
+// @namespace    https://syncplay.tama.guru/
+// @version      1708352814
+// @description  Watch video together
+// @author       *@outlook.com
 // @match        *://*/*
-// @icon         https://2gether.video/icon/favicon-32x32.png
+// @icon         https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/images/favicon-32x32.png
 // @grant        none
 // ==/UserScript==
 
@@ -1203,7 +1203,7 @@
                 Voice.status = VoiceStatus.ERROR;
                 return;
             }
-            if (window.location.protocol != "https:") {
+            if (window.location.protocol != "https:" && window.location.protocol != 'file:') {
                 Voice.errorMessage = "仅支持https网站使用";
                 Voice.status = VoiceStatus.ERROR;
                 return;
@@ -1670,7 +1670,7 @@
         height: 32px;
         width: 32px;
         background-size: cover;
-        background-image: url(data:image/png;base64,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);
+        background-image: url("data:image/png;base64,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");
     }
 
     .container #close-btn {
@@ -1756,6 +1756,7 @@
                 this.minimized = false;
                 let shadowWrapper = document.createElement("div");
                 shadowWrapper.id = "VideoTogetherWrapper";
+                shadowWrapper.ontouchstart = (e) => { e.stopPropagation() }
                 let wrapper;
                 try {
                     wrapper = AttachShadow(shadowWrapper, { mode: "open" });
@@ -1769,8 +1770,8 @@
   <div id="videoTogetherHeader" class="vt-modal-header">
     <div style="display: flex;align-items: center;">
       <img style="width: 16px; height: 16px;"
-        src="data:image/png;base64,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">
-      <div class="vt-modal-title">VideoTogether</div>
+        src="data:image/png;base64,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">
+      <div class="vt-modal-title">来狼被窝一起看</div>
     </div>
 
     <button id="downloadBtn" type="button" class="vt-modal-title-button vt-modal-easyshare">
@@ -1813,7 +1814,7 @@
       </span>
     </a>
 
-    <a href="https://setting.2gether.video/" target="_blank" id="videoTogetherSetting" type="button"
+    <a href="https://api.tama.host/videotogether/setting/v2_website.html" target="_blank" id="videoTogetherSetting" type="button"
       aria-label="Setting" class="vt-modal-setting vt-modal-title-button">
       <span class="vt-modal-close-x">
         <span role="img" aria-label="Setting" class="vt-anticon vt-anticon-close vt-modal-close-icon">
@@ -1852,7 +1853,7 @@
         </div>
         <div>
           <span id="videoTogetherRoomPasswordLabel">密码</span>
-          <input id="videoTogetherRoomPasswordInput" autocomplete="off" placeholder="输入建房密码">
+          <input id="videoTogetherRoomPdIpt" autocomplete="off" placeholder="输入建房密码">
         </div>
         <div>
           <div id="textMessageChat" style="display: none;">
@@ -2025,11 +2026,17 @@
 </div>
 <div style="width: 24px; height: 24px;" id="videoTogetherSamllIcon">
   <img draggable="false" width="24px" height="24px" id="videoTogetherMaximize"
-    src="data:image/png;base64,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">
+    src="data:image/png;base64,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">
   </img>
 </div>
 
 <style>
+  :host {
+    all: initial;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+
   #videoTogetherFlyPannel {
     background-color: #ffffff !important;
     display: block;
@@ -2290,7 +2297,7 @@
   }
 
   #videoTogetherRoomNameInput,
-  #videoTogetherRoomPasswordInput {
+  #videoTogetherRoomPdIpt {
     width: 150px;
     height: auto;
     font-family: inherit;
@@ -2660,9 +2667,13 @@
                 }
                 this.easyShareCopyBtn.onclick = async () => {
                     try {
-                        await navigator.clipboard.writeText("点击链接，和我一起看吧：<main_share_link> , 如果打不开可以尝试备用链接：<china_share_link>"
-                            .replace("<main_share_link>", extension.generateEasyShareLink())
-                            .replace("<china_share_link>", extension.generateEasyShareLink(true)));
+                        if (isWeb()) {
+                            await navigator.clipboard.writeText(extension.linkWithMemberState(window.location, extension.RoleEnum.Member, false))
+                        } else {
+                            await navigator.clipboard.writeText("点击链接，和我一起看吧：<main_share_link> , 如果打不开可以尝试备用链接：<china_share_link>"
+                                .replace("<main_share_link>", extension.generateEasyShareLink())
+                                .replace("<china_share_link>", extension.generateEasyShareLink(true)));
+                        }
                         popupError("复制成功，快去分享吧");
                     } catch {
                         popupError("复制失败");
@@ -2727,7 +2738,7 @@
                 this.videoTogetherSetting = wrapper.querySelector("#videoTogetherSetting");
                 hide(this.videoTogetherSetting);
                 this.inputRoomName = wrapper.querySelector('#videoTogetherRoomNameInput');
-                this.inputRoomPassword = wrapper.querySelector("#videoTogetherRoomPasswordInput");
+                this.inputRoomPassword = wrapper.querySelector("#videoTogetherRoomPdIpt");
                 this.inputRoomNameLabel = wrapper.querySelector('#videoTogetherRoomNameLabel');
                 this.inputRoomPasswordLabel = wrapper.querySelector("#videoTogetherRoomPasswordLabel");
                 this.videoTogetherHeader = wrapper.querySelector("#videoTogetherHeader");
@@ -2956,9 +2967,9 @@
 
         HelpButtonOnClick() {
             this.Maximize();
-            let url = 'https://2gether.video/guide/qa.html';
+            let url = 'https://api.tama.host/videotogether/guide/qa.html';
             if (vtRuntime == "website") {
-                url = "https://2gether.video/guide/website_qa.html"
+                url = "https://api.tama.host/videotogether/guide/website_qa.html"
             }
             window.open(url, '_blank');
         }
@@ -3084,10 +3095,10 @@
             }
             this.cspBlockedHost = {};
 
-            this.video_together_host = 'https://vt.panghair.com:5000/';
-            this.video_together_main_host = 'https://vt.panghair.com:5000/';
-            this.video_together_backup_host = 'https://api.chizhou.in/';
-            this.video_tag_names = ["video", "bwp-video"]
+            this.video_together_host = 'https://syncplay.tama.guru:5000/';
+            this.video_together_main_host = 'https://syncplay.tama.guru:5000/';
+            this.video_together_backup_host = 'https://syncplay.tama.guru:5000/';
+            this.video_tag_names = ["video", "bwp-video", "fake-iframe-video"]
 
             this.timer = 0
             this.roomName = ""
@@ -3104,7 +3115,7 @@
 
             this.activatedVideo = undefined;
             this.tempUser = generateTempUserId();
-            this.version = '1695962125';
+            this.version = '1708352814';
             this.isMain = (window.self == window.top);
             this.UserId = undefined;
 
@@ -3113,6 +3124,7 @@
             this.voiceVolume = null;
             this.videoVolume = null;
             this.m3u8Files = {};
+            this.m3u8DurationReCal = {};
             this.m3u8UrlTestResult = {};
             this.hasCheckedM3u8Url = {};
             this.m3u8PostWindows = {};
@@ -3243,9 +3255,9 @@
 
         generateEasyShareLink(china = false) {
             if (china) {
-                return `https://videotogether.gitee.io/${language}/easyshare.html?VideoTogetherRole=3&VideoTogetherRoomName=${this.roomName}&VideoTogetherTimestamp=9999999999&VideoTogetherUrl=&VideoTogetherPassword=${this.password}`
+                return ''
             } else {
-                return `https://2gether.video/${language}/easyshare.html?VideoTogetherRole=3&VideoTogetherRoomName=${this.roomName}&VideoTogetherTimestamp=9999999999&VideoTogetherUrl=&VideoTogetherPassword=${this.password}`;
+                return `https://api.tama.host/videotogether/share/easyshare.html?VideoTogetherRole=3&VideoTogetherRoomName=${this.roomName}&VideoTogetherTimestamp=9999999999&VideoTogetherUrl=&VideoTogetherPassword=${this.password}`;
             }
         }
 
@@ -3707,7 +3719,7 @@
                                 return;
                             })
                         }
-                        if (d < 3) {
+                        if (d < 3 || d / data.duration < 0.03) {
                             m3u8Url = selected.m3u8Url;
                         }
                     } catch { }
@@ -3741,7 +3753,11 @@
                             show(windowPannel.easyShareCopyBtn);
                         } else {
                             this.currentM3u8Url = undefined;
-                            hide(windowPannel.easyShareCopyBtn);
+                            if (isWeb()) {
+                                show(windowPannel.easyShareCopyBtn);
+                            } else {
+                                hide(windowPannel.easyShareCopyBtn);
+                            }
                         }
                     } catch { };
                     try {
@@ -3777,12 +3793,14 @@
                     window.location = data.url;
                     let currentUrl = new URL(window.location);
                     let newUrl = new URL(data.url);
-                    currentUrl.hash = "";
-                    newUrl.hash = "";
-                    if (currentUrl.href == newUrl.href) {
-                        extension.url = data.url;
+                    if (newUrl.hash != "") {
+                        currentUrl.hash = "";
+                        newUrl.hash = "";
+                        if (currentUrl.href == newUrl.href) {
+                            extension.url = data.url;
+                            // window.location.reload();// for hash change
+                        }
                     }
-                    // window.location.reload();// for hash change
                     break;
                 case MessageType.ChangeVideoVolume:
                     this.ForEachVideo(video => {
@@ -3797,6 +3815,7 @@
                     break;
                 }
                 case MessageType.SyncStorageValue: {
+                    const firstSync = (window.VideoTogetherSettingEnabled == undefined)
                     window.VideoTogetherStorage = data;
                     if (!this.isMain) {
                         return;
@@ -3822,7 +3841,7 @@
                             windowPannel.voiceSelect.value = data.PublicMessageVoice;
                         }
                     } catch { };
-                    if (!window.videoTogetherFlyPannel.disableDefaultSize && !window.VideoTogetherSettingEnabled) {
+                    if (!window.videoTogetherFlyPannel.disableDefaultSize && firstSync) {
                         if (data.MinimiseDefault) {
                             window.videoTogetherFlyPannel.Minimize(true);
                         } else {
@@ -3833,9 +3852,9 @@
                         sendMessageToTop(MessageType.SetStorageValue, { key: "PublicUserId", value: generateUUID() });
                     }
                     try {
-                        if (window.VideoTogetherSettingEnabled == undefined) {
+                        if (firstSync) {
                             if (!isWeb()) {
-                                window.videoTogetherFlyPannel.videoTogetherSetting.href = "https://setting.2gether.video/v2.html";
+                                window.videoTogetherFlyPannel.videoTogetherSetting.href = "https://api.tama.host/videotogether/setting/v2_website.html";
                                 show(select('#videoTogetherSetting'));
                             } else {
                                 // website
@@ -3849,7 +3868,6 @@
                     try {
                         dsply(select('#downloadBtn'), downloadEnabled() && !windowPannel.isInRoom)
                     } catch { }
-
                     window.VideoTogetherSettingEnabled = true;
                     break;
                 }
@@ -3880,6 +3898,29 @@
                 case MessageType.UpdateM3u8Files: {
                     data['m3u8Files'].forEach(m3u8 => {
                         try {
+                            function calculateM3U8Duration(textContent) {
+                                let totalDuration = 0;
+                                const lines = textContent.split('\n');
+
+                                for (let i = 0; i < lines.length; i++) {
+                                    if (lines[i].startsWith('#EXTINF:')) {
+                                        if (i + 1 >= lines.length || lines[i + 1].startsWith('#')) {
+                                            continue;
+                                        }
+                                        let durationLine = lines[i];
+                                        let durationParts = durationLine.split(':');
+                                        if (durationParts.length > 1) {
+                                            let durationValue = durationParts[1].split(',')[0];
+                                            let duration = parseFloat(durationValue);
+                                            if (!isNaN(duration)) {
+                                                totalDuration += duration;
+                                            }
+                                        }
+                                    }
+                                }
+                                return totalDuration;
+                            }
+
                             const cyrb53 = (str, seed = 0) => {
                                 let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
                                 for (let i = 0, ch; i < str.length; i++) {
@@ -3897,6 +3938,10 @@
                             if (m3u8.m3u8Url.startsWith("data:")) {
                                 m3u8.m3u8Url = `${cyrb53(m3u8.m3u8Url)}`;
                             }
+                            if (this.m3u8DurationReCal[m3u8.m3u8Url] == undefined) {
+                                this.m3u8DurationReCal[m3u8.m3u8Url] = calculateM3U8Duration(m3u8.m3u8Content);
+                            }
+                            m3u8.duration = this.m3u8DurationReCal[m3u8.m3u8Url];
                         } catch { }
                     })
                     this.m3u8Files[data['id']] = data['m3u8Files'];
@@ -4591,18 +4636,15 @@
             } catch (e) { console.error(e); }
         }
 
-        linkWithMemberState(link) {
+        linkWithMemberState(link, newRole = undefined, expire = true) {
             let url = new URL(link);
             let tmpSearch = url.search;
             url.search = "";
-            if (link.toLowerCase().includes("youtube")) {
-                url.searchParams.set("app", "desktop");
-            }
             url.searchParams.set("VideoTogetherUrl", link);
             url.searchParams.set("VideoTogetherRoomName", this.roomName);
             url.searchParams.set("VideoTogetherPassword", this.password);
-            url.searchParams.set("VideoTogetherRole", this.role);
-            url.searchParams.set("VideoTogetherTimestamp", Date.now() / 1000);
+            url.searchParams.set("VideoTogetherRole", newRole ? newRole : this.role);
+            url.searchParams.set("VideoTogetherTimestamp", expire ? Date.now() / 1000 : 1e10);
             let urlStr = url.toString();
             if (tmpSearch.length > 1) {
                 urlStr = urlStr + "&" + tmpSearch.slice(1);

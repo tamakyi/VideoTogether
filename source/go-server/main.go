@@ -9,7 +9,7 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/VideoTogether/VideoTogether/internal/qps"
+	"github.com/tamakyi/VideoTogether/internal/qps"
 	"github.com/unrolled/render"
 )
 
@@ -26,7 +26,8 @@ func main() {
 		render.New(),
 		vtSrv,
 		qps.NewQP(time.Second, 3600),
-		"http://panghair.com:7002/",
+		"http://127.0.0.1:5001/qps/",
+		//	"http://panghair.com:7002/", is old setting
 		&http.Client{},
 	)
 	if len(os.Args) <= 1 {
@@ -39,6 +40,6 @@ func main() {
 	case "prod":
 		panic(http.ListenAndServeTLS(":5000", "./certificate.crt", "./private.pem", server))
 	default:
-		panic("unknown env")
+		panic("debug")
 	}
 }

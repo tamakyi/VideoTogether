@@ -84,7 +84,7 @@ const htmlTpl = `
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-	<script src="https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@main/source/go-server/internal/qps/qps.js"></script>
+	<script src="https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/source/go-server/internal/qps/qps.js"></script>
     <style>
         html,body{ height: 100% }
     </style>

@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Video Together 一起看视频
-// @namespace    https://2gether.video/
-// @version      1706416707
-// @description  Watch video together 一起看视频
-// @author       maggch@outlook.com
+// @name         一起看视频
+// @namespace    https://syncplay.tama.guru/
+// @version      1708352814
+// @description  Watch video together
+// @author       *@outlook.com
 // @match        *://*/*
-// @icon         https://2gether.video/icon/favicon-32x32.png
+// @icon         https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/images/favicon-32x32.png
 // @grant        GM.xmlHttpRequest
 // @grant        GM_addElement
 // @grant        GM.setValue
@@ -19,12 +19,15 @@
 // @connect      vt.panghair.com
 // @connect      raw.githubusercontent.com
 // @connect      videotogether.oss-cn-hangzhou.aliyuncs.com
+// @connect      syncplay.tama.guru
+// @connect      api.i-tama.website
+// @connect      img-tama-guru.oss-cn-hongkong.aliyuncs.com
 // ==/UserScript==
 
 (async function () {
     let isDevelopment = false;
 
-    let version = '1706416707'
+    let version = '1708352814'
     let type = 'website'
     function getBrowser() {
         switch (type) {
@@ -65,7 +68,7 @@
                             window.location.origin === iframe.contentWindow.location.origin) {
                             console.log("inject to iframe");
                             const script = document.createElement('script');
-                            script.src = "https://2gether.video/release/extension.website.user.js";
+                            script.src = "https://api.tama.host/videotogether/release/extension.website.user.js";
                             iframe.contentWindow.document.body.appendChild(script);
                             iframe.contentWindow.VideoTogetherParentInject = true;
                         }
@@ -230,14 +233,14 @@
             cachedVt = privateCachedVt['data'];
         } else {
             console.log("Refresh VT");
-            fetch(`https://2gether.video/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
+            fetch(`https://api.tama.host/videotogether/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
                 .then(r => r.text())
                 .then(data => getGM().setValue('PrivateCachedVt', {
                     'version': vtRefreshVersion,
                     'data': data
                 }))
                 .catch(() => {
-                    fetch(`https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
+                    fetch(`https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
                         .then(r => r.text())
                         .then(data => getGM().setValue('PrivateCachedVt', {
                             'version': vtRefreshVersion,
@@ -566,7 +569,7 @@
     let wrapper = document.createElement("div");
     wrapper.innerHTML = `<div id="videoTogetherLoading">
     <div id="videoTogetherLoadingwrap">
-        <img style="display: inline;" src="data:image/png;base64,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">
+        <img style="display: inline;" src="data:image/png;base64,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">
         <a target="_blank" href="http://2gether.video/guide/qa.html">loading ...</a>
     </div>
 </div>
@@ -613,7 +616,7 @@
     script.type = 'text/javascript';
     switch (type) {
         case "userscript":
-            script.src = `https://2gether.video/release/vt.${language}.user.js?timestamp=` + version;
+            script.src = `https://api.tama.host/videotogether/release/vt.${language}.user.js?timestamp=` + version;
             break;
         case "Chrome":
         case "Safari":
@@ -646,10 +649,10 @@
             script.src = `http://127.0.0.1:7000/release/vt.debug.${language}.user.js?timestamp=` + parseInt(Date.now());
             break;
         case "userscript_beta":
-            script.src = `https://raw.githubusercontent.com/VideoTogether/VideoTogether/voice/release/vt.${language}.user.js?timestamp=` + parseInt(Date.now());
+            script.src = `https://raw.githubusercontent.com/tamakyi/VideoTogether/voice/release/vt.${language}.user.js?timestamp=` + parseInt(Date.now());
             break;
         case "website":
-            script.src = `https://2gether.video/release/vt.${language}.website.js?timestamp=` + version;
+            script.src = `https://api.tama.host/videotogether/release/vt.${language}.website.js?timestamp=` + version;
             break;
         case "website_debug":
             script.src = `http://127.0.0.1:7000/release/vt.debug.${language}.website.js?timestamp=` + parseInt(Date.now());
@@ -690,7 +693,7 @@
         if (!ExtensionInitSuccess) {
             let script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = `https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/vt.${language}.user.js`;
+            script.src = `https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/release/vt.${language}.user.js`;
             (document.body || document.documentElement).appendChild(script);
             try {
                 if (isWebsite) {

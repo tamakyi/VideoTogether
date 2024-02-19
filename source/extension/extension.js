@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Video Together 一起看视频
-// @namespace    https://2gether.video/
+// @name         一起看视频
+// @namespace    https://syncplay.tama.guru/
 // @version      {{timestamp}}
-// @description  Watch video together 一起看视频
-// @author       maggch@outlook.com
+// @description  Watch video together
+// @author       *@outlook.com
 // @match        *://*/*
-// @icon         https://2gether.video/icon/favicon-32x32.png
+// @icon         https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/images/favicon-32x32.png
 // @grant        GM.xmlHttpRequest
 // @grant        GM_addElement
 // @grant        GM.setValue
@@ -19,6 +19,9 @@
 // @connect      vt.panghair.com
 // @connect      raw.githubusercontent.com
 // @connect      videotogether.oss-cn-hangzhou.aliyuncs.com
+// @connect      syncplay.tama.guru
+// @connect      api.i-tama.website
+// @connect      img-tama-guru.oss-cn-hongkong.aliyuncs.com
 // ==/UserScript==
 
 (async function () {
@@ -65,7 +68,7 @@
                             window.location.origin === iframe.contentWindow.location.origin) {
                             console.log("inject to iframe");
                             const script = document.createElement('script');
-                            script.src = "https://2gether.video/release/extension.website.user.js";
+                            script.src = "https://api.tama.host/videotogether/release/extension.website.user.js";
                             iframe.contentWindow.document.body.appendChild(script);
                             iframe.contentWindow.VideoTogetherParentInject = true;
                         }
@@ -230,14 +233,14 @@
             cachedVt = privateCachedVt['data'];
         } else {
             console.log("Refresh VT");
-            fetch(`https://2gether.video/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
+            fetch(`https://api.tama.host/videotogether/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
                 .then(r => r.text())
                 .then(data => getGM().setValue('PrivateCachedVt', {
                     'version': vtRefreshVersion,
                     'data': data
                 }))
                 .catch(() => {
-                    fetch(`https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
+                    fetch(`https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/vt.${language}.${vtType}.js?vtRefreshVersion=` + vtRefreshVersion)
                         .then(r => r.text())
                         .then(data => getGM().setValue('PrivateCachedVt', {
                             'version': vtRefreshVersion,
@@ -570,7 +573,7 @@
     script.type = 'text/javascript';
     switch (type) {
         case "userscript":
-            script.src = `https://2gether.video/release/vt.${language}.user.js?timestamp=` + version;
+            script.src = `https://api.tama.host/videotogether/release/vt.${language}.user.js?timestamp=` + version;
             break;
         case "Chrome":
         case "Safari":
@@ -603,10 +606,10 @@
             script.src = `http://127.0.0.1:7000/release/vt.debug.${language}.user.js?timestamp=` + parseInt(Date.now());
             break;
         case "userscript_beta":
-            script.src = `https://raw.githubusercontent.com/VideoTogether/VideoTogether/voice/release/vt.${language}.user.js?timestamp=` + parseInt(Date.now());
+            script.src = `https://raw.githubusercontent.com/tamakyi/VideoTogether/voice/release/vt.${language}.user.js?timestamp=` + parseInt(Date.now());
             break;
         case "website":
-            script.src = `https://2gether.video/release/vt.${language}.website.js?timestamp=` + version;
+            script.src = `https://api.tama.host/videotogether/release/vt.${language}.website.js?timestamp=` + version;
             break;
         case "website_debug":
             script.src = `http://127.0.0.1:7000/release/vt.debug.${language}.website.js?timestamp=` + parseInt(Date.now());
@@ -647,7 +650,7 @@
         if (!ExtensionInitSuccess) {
             let script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = `https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/vt.${language}.user.js`;
+            script.src = `https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/release/vt.${language}.user.js`;
             (document.body || document.documentElement).appendChild(script);
             try {
                 if (isWebsite) {

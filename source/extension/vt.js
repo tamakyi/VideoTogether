@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Video Together 一起看视频
-// @namespace    https://2gether.video/
+// @name         一起看视频
+// @namespace    https://syncplay.tama.guru/
 // @version      {{timestamp}}
-// @description  Watch video together 一起看视频
-// @author       maggch@outlook.com
+// @description  Watch video together
+// @author       *@outlook.com
 // @match        *://*/*
-// @icon         https://2gether.video/icon/favicon-32x32.png
+// @icon         https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/images/favicon-32x32.png
 // @grant        none
 // ==/UserScript==
 
@@ -1675,9 +1675,9 @@
 
         HelpButtonOnClick() {
             this.Maximize();
-            let url = 'https://2gether.video/guide/qa.html';
+            let url = 'https://api.tama.host/videotogether/guide/qa.html';
             if (vtRuntime == "website") {
-                url = "https://2gether.video/guide/website_qa.html"
+                url = "https://api.tama.host/videotogether/guide/website_qa.html"
             }
             window.open(url, '_blank');
         }
@@ -1805,7 +1805,7 @@
 
             this.video_together_host = '{{{ {"":"./config/release_host","debug":"./config/debug_host","order":0} }}}';
             this.video_together_main_host = '{{{ {"":"./config/release_host","order":0} }}}';
-            this.video_together_backup_host = 'https://api.chizhou.in/';
+            this.video_together_backup_host = '{{{ {"":"./config/release_host","order":0} }}}';
             this.video_tag_names = ["video", "bwp-video", "fake-iframe-video"]
 
             this.timer = 0
@@ -1965,7 +1965,7 @@
             if (china) {
                 return ''
             } else {
-                return `https://2gether.video/${language}/easyshare.html?VideoTogetherRole=3&VideoTogetherRoomName=${this.roomName}&VideoTogetherTimestamp=9999999999&VideoTogetherUrl=&VideoTogetherPassword=${this.password}`;
+                return `https://api.tama.host/videotogether/share/easyshare.html?VideoTogetherRole=3&VideoTogetherRoomName=${this.roomName}&VideoTogetherTimestamp=9999999999&VideoTogetherUrl=&VideoTogetherPassword=${this.password}`;
             }
         }
 
@@ -2562,7 +2562,7 @@
                     try {
                         if (firstSync) {
                             if (!isWeb()) {
-                                window.videoTogetherFlyPannel.videoTogetherSetting.href = "https://setting.2gether.video/v2.html";
+                                window.videoTogetherFlyPannel.videoTogetherSetting.href = "https://api.tama.host/videotogether/setting/v2_website.html";
                                 show(select('#videoTogetherSetting'));
                             } else {
                                 // website

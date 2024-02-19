@@ -1,0 +1,14 @@
+{
+    "sponsors": [
+        {
+            "room": "tamaroom",
+            "backgroundUrl": "https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/monitor/images/background.png"
+        }
+    ],
+    "blockDomains": [
+        "iqiyi.com",
+        "qq.com",
+        "youku.com",
+        "bilibili.com"
+    ]
+}

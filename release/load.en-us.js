@@ -1,6 +1,6 @@
 
 (function () {
-    let version = '1694442998'
+    let version = '1708352814'
 
     try {
         eval(document.currentScript.getAttribute("cachedvt"));
@@ -21,7 +21,7 @@
         let script = document.createElement('script');
         script.type = 'text/javascript';
         try {
-            script.src = `https://2gether.video/release/vt.${language}.user.js?timestamp=` + version;
+            script.src = `https://api.tama.host/videotogether/release/vt.${language}.user.js?timestamp=` + version;
         } catch {
             // this is a very secure site. don't inject
             document.querySelector("#videoTogetherLoading").remove();
@@ -40,7 +40,7 @@
         if (window.videoTogetherExtension == undefined) {
             let script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = `https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/vt.${language}.user.js`;
+            script.src = `https://img-tama-guru.oss-cn-hongkong.aliyuncs.com/videotogether/release/vt.${language}.user.js`;
             try {
                 document.body.appendChild(script);
             } catch { };
