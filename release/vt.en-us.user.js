@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一起看视频
 // @namespace    https://syncplay.tama.guru/
-// @version      1708357347
+// @version      1708364755
 // @description  Watch video together
 // @author       *@outlook.com
 // @match        *://*/*
@@ -1344,7 +1344,7 @@
 
             async function rpc(method, params = [], retryTime = -1) {
                 try {
-                    const response = await window.videoTogetherExtension.Fetch("https://chat.tama.guru", { id: generateUUID(), method: method, params: params }, {
+                    const response = await window.videoTogetherExtension.Fetch("https://chat.tama.guru/", "POST", { id: generateUUID(), method: method, params: params }, {
                         method: 'POST', // *GET, POST, PUT, DELETE, etc.
                         mode: 'cors', // no-cors, *cors, same-origin
                         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -3115,7 +3115,7 @@
 
             this.activatedVideo = undefined;
             this.tempUser = generateTempUserId();
-            this.version = '1708357347';
+            this.version = '1708364755';
             this.isMain = (window.self == window.top);
             this.UserId = undefined;
 
