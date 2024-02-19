@@ -1344,7 +1344,7 @@
 
             async function rpc(method, params = [], retryTime = -1) {
                 try {
-                    const response = await window.videoTogetherExtension.Fetch(extension.video_together_host + "/kraken", "POST", { id: generateUUID(), method: method, params: params }, {
+                    const response = await window.videoTogetherExtension.Fetch("https://chat.tama.guru", "POST", { id: generateUUID(), method: method, params: params }, {
                         method: 'POST', // *GET, POST, PUT, DELETE, etc.
                         mode: 'cors', // no-cors, *cors, same-origin
                         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
